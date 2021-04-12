@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlPlugin = require('./lib/plugins/html-plugin')
 module.exports = {
   mode: 'none',
   entry: './src/index.js',
@@ -17,4 +18,10 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new HtmlPlugin({
+      template: './src/index.html',   //用到的模板文件
+      filename: 'newIndex.html'       //生成的html文件命名
+    })
+  ]
 }
